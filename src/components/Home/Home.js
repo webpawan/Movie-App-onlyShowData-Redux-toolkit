@@ -9,7 +9,7 @@ import MoviListing from "../MovieListing/MoviListing";
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const moviText = "Harry";
+    // const moviText = "Harry";
    dispatch(fetchAsyncMovie());
     dispatch(fetchAsyncShows());
   }, [dispatch]);
