@@ -9,9 +9,49 @@
 }
 
 
-
 /* body { background-color: var(--blue); }
 
 h2 { border-bottom: 2px solid var(--blue); } */
 /* examples  */
+
+
+body{
+  background-color: var(--black) !important;
+}
+
+.card{
+  background-color: var(--dark1) !important;
+  transition: all .3s;
+}
+.card:hover {
+  box-shadow: 5px 5px  10px #7303be62;
+  transform: translateY(-2px);
+  transform: scaleX(1.1);
+}
+.card_btn{
+  text-decoration: none;
+  color: white;
+  border: 2px solid var(--dark3);
+  padding: .2rem .3rem;
+  font-size: .6rem;
+  transition: all .3s;
+}
+.card_btn:hover{
+  color: var(--black);
+  background-color: var(--dark3);
+}
+
+.bg_purple{
+  background-color: var(--dark1);
+  box-shadow:10px 10px  30px #8a2cdc55;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.bg_transprent{
+  z-index: 100;
+  background-color: rgba(13, 1, 1, 0.244);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.429);
+  /* filter: blur(1px); */
+}
 

@@ -5,7 +5,7 @@ import Header from './components/header/Header'
 import Home from './components/Home/Home'
 import MovieDetail from './components/MovieDeatil/MovieDetail'
 import PageNotFound from './components/PageNotFound/PageNotFound'
-
+import './App.css';
 const App = () => {
   return (
     <>
