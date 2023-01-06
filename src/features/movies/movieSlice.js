@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { APIKey } from '../../api/MovieApiKey'
 
 export const fetchAsyncMovie = createAsyncThunk(
   "movies/fetchAsyncMovie",
-  async () => {
+  async (search) => {
     try {
-      let res = await axios("https://www.omdbapi.com/?apikey=1ede3aaf&s=Harry");
+      let res = await axios(`https://www.omdbapi.com/?apikey=${APIKey}&s=${search}&type=movie`);
 
       return res.data;
     } catch (error) {
@@ -16,10 +17,10 @@ export const fetchAsyncMovie = createAsyncThunk(
 
 export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
-  async () => {
+  async (search) => {
     try {
       let res = await axios(
-        "https://www.omdbapi.com/?apikey=1ede3aaf&s=friends&type=series"
+        `https://www.omdbapi.com/?apikey=${APIKey}&s=${search}&type=series`
       );
 
       return res.data;
