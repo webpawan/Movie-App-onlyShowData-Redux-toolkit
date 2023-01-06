@@ -12,11 +12,11 @@ const Header = () => {
     dispatch(fetchAsyncMovie(term))
     dispatch(fetchAsyncShows(term))
     setTerm("")
-    console.log(term);
+    
   }
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg_navbar mb-5">
+    <nav className="navbar navbar-expand-lg navbar-light bg_navbar mb-5 sticky-top">
   <div className="container-fluid">
     <NavLink className="navbar-brand text-light" to="/">MovieInfoBar</NavLink>
   

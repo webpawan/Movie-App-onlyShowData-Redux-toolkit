@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -29,7 +30,6 @@ const MovieDetail = () => {
     imdbVotes,
     Writer,
   } = data;
-  console.log(Ratings);
 
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowDetail(imdbID));
@@ -39,13 +39,13 @@ const MovieDetail = () => {
   }, [dispatch, imdbID]);
 
   if (Response !== "True") {
-    return <h1>Loading..</h1>;
+    return <h1 className="mx-auto text-center">Loading...</h1>;
   }
 
   return (
     <>
       <div className="container">
-        <div className="row mx-auto bg_purple py-4 ">
+        <motion.div  className="row mx-auto bg_purple py-4"  initial={{opacity:0,scale:.8}} animate={{opacity:1,scale:1}} exit={{opacity:0,scale:.8}} transition={{duration:.6}}>
           <div className="col-12 col-sm-4 mx-auto  text-center my-2 ">
             <div className="img_container img-fluid ">
               <img src={Poster} alt="" />
@@ -55,28 +55,28 @@ const MovieDetail = () => {
             <h2 className=""> {Title}</h2>
             <h5 className="">
               <span>
-                <i class="fa-solid fa-trophy"></i>
+                <i className="fa-solid fa-trophy"></i>
               </span>{" "}
               Awards - {Awards}
             </h5>
             <h6>
               <span>
-                <i class="fa-solid fa-sack-dollar"></i>
+                <i className="fa-solid fa-sack-dollar"></i>
               </span>{" "}
               BoxOffice Collection - {BoxOffice}
             </h6>
-            <p className="d-flex align-items-center">
+            <div className="d-flex align-items-center">
               {" "}
               <span>
-                <i class="fa-solid fa-star"></i> imdb -{" "}
+                <i className="fa-solid fa-star"></i> imdb -{" "}
               </span>{" "}
               <p className="mx-2 mb-0">imdb ratings {imdbRating} ,</p> imdb
               votes {imdbVotes}{" "}
-            </p>
+            </div>
             <h6>Ratings</h6>
             {Ratings.map((data, index) => {
               return (
-                <p>
+                <p key={index}>
                   {data.Source} - {data.Value}
                 </p>
               );
@@ -87,7 +87,7 @@ const MovieDetail = () => {
             <p>Writer - {Writer}</p>
             <p>Released Date - {Released}</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
