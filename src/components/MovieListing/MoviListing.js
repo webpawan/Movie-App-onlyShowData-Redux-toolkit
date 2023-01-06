@@ -19,7 +19,7 @@ const MoviListing = () => {
           </h3>
         </div>
         <div className="container-fluid mx-auto bg-card__container">
-          {size === 0 ? <h1 className="text-capitalize text-center mx-auto">search movies and shows in search bar</h1> : <MovieCard movies={movies} shows={shows} />}
+          {size === 0 ? <h1 className="text-capitalize text-center mx-auto my_text">search movies and shows in search bar</h1> : <MovieCard movies={movies} shows={shows} />}
           
         </div>
       </div>

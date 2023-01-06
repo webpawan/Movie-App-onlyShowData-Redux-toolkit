@@ -39,7 +39,7 @@ const MovieDetail = () => {
   }, [dispatch, imdbID]);
 
   if (Response !== "True") {
-    return <h1 className="mx-auto text-center">Loading...</h1>;
+    return <h1 className="mx-auto text-center display-1">Loading...</h1>;
   }
 
   return (
@@ -89,6 +89,7 @@ const MovieDetail = () => {
           </div>
         </motion.div>
       </div>
+      
     </>
   );
 };
